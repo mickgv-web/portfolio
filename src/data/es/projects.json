@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Battleships Multiplayer",
+    "description": "Juego clásico Hundir la Flota con WebSockets usando Spring Boot.",
+    "image": "/images/battleships.png",
+    "github": "https://github.com/usuario/battleships",
+    "demo": null,
+    "tech": ["Java", "Spring Boot", "WebSockets"]
+  },
+  {
+    "name": "Academia Manager",
+    "description": "Sistema de gestión académica en Java.",
+    "image": "/images/academia.png",
+    "github": "https://github.com/usuario/academia",
+    "demo": null,
+    "tech": ["Java"]
+  }
+]
