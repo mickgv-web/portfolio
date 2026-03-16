@@ -1,27 +1,63 @@
 .hero {
-  padding: 80px 0;
+  position: relative;
+
+  padding: 120px 0 100px 0;
 
   max-width: 700px;
 }
 
+/* glow experimental */
+
+.hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  background: radial-gradient(
+    circle,
+    rgba(108,99,255,0.25),
+    transparent 70%
+  );
+
+  filter: blur(90px);
+
+  top: -120px;
+  left: -120px;
+
+  z-index: -1;
+}
+
+/* HERO TEXT */
+
 .hero h1 {
-  font-size: 42px;
-  margin-bottom: 8px;
+  font-size: 52px;
+  font-weight: 700;
+
+  margin-bottom: 10px;
 }
 
 .hero-subtitle {
-  font-size: 20px;
-  color: #555;
-  margin-bottom: 16px;
+  font-size: 22px;
+
+  color: var(--text-secondary);
+
+  margin-bottom: 18px;
 }
 
 .hero-description {
   font-size: 16px;
-  color: #444;
+
+  color: var(--text-secondary);
+
   line-height: 1.6;
 
-  margin-bottom: 28px;
+  margin-bottom: 32px;
 }
+
+/* ACTIONS */
 
 .hero-actions {
   display: flex;
@@ -29,23 +65,51 @@
   flex-wrap: wrap;
 }
 
+/* PRIMARY BUTTON */
+
 .btn-primary {
-  background: black;
+  background: var(--accent);
   color: white;
+
   padding: 10px 16px;
+
   border-radius: 6px;
+
   text-decoration: none;
+
+  border: none;
+
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+/* SECONDARY BUTTON */
 
 .btn-secondary {
   display: flex;
   align-items: center;
   gap: 6px;
 
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-strong);
+
   padding: 10px 14px;
+
   border-radius: 6px;
 
   text-decoration: none;
-  color: black;
+
+  color: var(--text-secondary);
+
+  background: transparent;
+
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+  color: var(--text-primary);
 }
