@@ -6,7 +6,7 @@ function Projects() {
     <section>
       <h2>Projects</h2>
 
-      <div style={styles.grid}>
+      <div className="projects-grid">
         {projects.map((project) => (
           <ProjectCard
             key={project.name}
@@ -17,13 +17,5 @@ function Projects() {
     </section>
   );
 }
-
-const styles = {
-  grid: {
-    display: "flex",
-    gap: "20px",
-    flexWrap: "wrap"
-  }
-};
 
 export default Projects;
