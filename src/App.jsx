@@ -1,11 +1,11 @@
+import Layout from "./components/layout/Layout";
 import Projects from "./pages/Projects";
 
 function App() {
   return (
-    <div>
-      <h1>Portfolio</h1>
+    <Layout>
       <Projects />
-    </div>
+    </Layout>
   );
 }
 
