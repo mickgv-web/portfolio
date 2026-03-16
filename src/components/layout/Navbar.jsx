@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Navbar() {
   return (
     <nav className="navbar">
@@ -5,10 +7,8 @@ function Navbar() {
         <h2 className="logo">MG</h2>
 
         <div className="nav-links">
-          <a href="#">Projects</a>
-          <a href="#">Experiments</a>
-          <a href="#">Learning</a>
-          <a href="#">About</a>
+          <Link to="/">Home</Link>
+          <Link to="/projects">Projects</Link>
         </div>
       </div>
     </nav>
