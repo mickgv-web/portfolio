@@ -1,21 +1,30 @@
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .main {
+  flex: 1;
   max-width: 1100px;
   margin: auto;
   padding: 80px 24px;
 }
 
+.main-home {
+  padding-top: 0;
+}
+
 /* NAVBAR */
 
 .navbar {
-  border-bottom: 1px solid var(--border-subtle);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
 .nav-content {
   max-width: 1100px;
   margin: auto;
-
   padding: 16px 24px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -23,11 +32,8 @@
 
 .nav-links a {
   margin-left: 20px;
-
   text-decoration: none;
-
   color: var(--text-secondary);
-
   transition: color 0.2s ease;
 }
 
@@ -35,14 +41,17 @@
   color: var(--text-primary);
 }
 
+.logo {
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+}
+
 /* FOOTER */
 
 .footer {
   border-top: 1px solid var(--border-subtle);
-
   text-align: center;
-
   padding: 30px 20px;
-
   color: var(--text-secondary);
 }

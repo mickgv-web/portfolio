@@ -1,59 +1,50 @@
+.hero-wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
 .hero {
   position: relative;
-
   padding: 120px 0 100px 0;
-
   max-width: 700px;
 }
 
-/* glow experimental */
-
 .hero::before {
   content: "";
-
   position: absolute;
-
-  width: 420px;
-  height: 420px;
-
+  width: 500px;
+  height: 500px;
   background: radial-gradient(
     circle,
     rgba(108,99,255,0.25),
     transparent 70%
   );
-
-  filter: blur(90px);
-
-  top: -120px;
-  left: -120px;
-
+  filter: blur(100px);
+  top: -150px;
+  left: -150px;
   z-index: -1;
 }
 
 /* HERO TEXT */
 
 .hero h1 {
-  font-size: 52px;
+  font-size: 56px;
   font-weight: 700;
-
   margin-bottom: 10px;
 }
 
 .hero-subtitle {
   font-size: 22px;
-
   color: var(--text-secondary);
-
   margin-bottom: 18px;
 }
 
 .hero-description {
+  max-width: 520px;
   font-size: 16px;
-
   color: var(--text-secondary);
-
   line-height: 1.6;
-
   margin-bottom: 32px;
 }
 

@@ -1,34 +1,46 @@
 [
   {
-    "name": "Battleships Multiplayer",
-    "description": "Juego clásico Hundir la Flota con WebSockets usando Spring Boot.",
-    "image": "/images/battleships.jpg",
-    "github": "https://github.com/usuario/battleships",
+    "name": "Padel App",
+    "description": "Aplicación web que conecta un frontend en React con una API en Python.",
+    "image": "/images/placeholder2.jpg",
+    "github": [
+      {
+        "url": "https://github.com/mickgv-web/front-padel",
+        "label": "Front"
+      },
+      {
+        "url": "https://github.com/mickgv-web/paddle-api",
+        "label": "API"
+      }
+    ],
     "demo": null,
-    "tech": ["Java", "Spring Boot", "WebSockets"]
+    "tech": ["React", "Python", "API REST"]
   },
   {
-    "name": "Academia Manager",
-    "description": "Sistema de gestión académica en Java.",
-    "image": "/images/academia.jpg",
-    "github": "https://github.com/usuario/academia",
+    "name": "Juego en tiempo real",
+    "description": "Exploración de comunicación en tiempo real entre cliente y servidor utilizando WebSockets.",
+    "image": "/images/placeholder.jpg",
+    "github": null,
     "demo": null,
-    "tech": ["Java"]
+    "tech": ["Java", "Spring Boot", "WebSockets"],
+    "status": "in-progress"
   },
   {
-    "name": "Battleships Multiplayer",
-    "description": "Juego clásico Hundir la Flota con WebSockets usando Spring Boot.",
-    "image": "/images/battleships.jpg",
-    "github": "https://github.com/usuario/battleships",
+    "name": "Aplicación backend",
+    "description": "Proyecto centrado en la estructura y gestión de datos en el servidor utilizando un patrón MVC.",
+    "image": "/images/placeholder.jpg",
+    "github": null,
     "demo": null,
-    "tech": ["Java", "Spring Boot", "WebSockets"]
+    "tech": ["PHP", "MVC"],
+    "status": "draft"
   },
   {
-    "name": "Academia Manager",
-    "description": "Sistema de gestión académica en Java.",
-    "image": "/images/academia.jpg",
-    "github": "https://github.com/usuario/academia",
+    "name": "Experimento de interfaz",
+    "description": "Pequeño experimento centrado en interacción y construcción de UI en frontend.",
+    "image": "/images/placeholder.jpg",
+    "github": null,
     "demo": null,
-    "tech": ["Java"]
+    "tech": ["JavaScript", "CSS"],
+    "status": "draft"
   }
 ]
