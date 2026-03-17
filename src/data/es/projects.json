@@ -1,12 +1,12 @@
 [
   {
-    "name": "Padel App",
-    "description": "Aplicación web que conecta un frontend en React con una API en Python.",
+    "name": "CourtLab",
+    "description": "Aplicación fullstack de reservas de pistas con gestión de usuarios, lógica de disponibilidad y cálculo dinámico de precios.",
     "image": "/images/placeholder2.jpg",
     "github": [
       {
         "url": "https://github.com/mickgv-web/front-padel",
-        "label": "Front"
+        "label": "Frontend"
       },
       {
         "url": "https://github.com/mickgv-web/paddle-api",
@@ -14,7 +14,8 @@
       }
     ],
     "demo": null,
-    "tech": ["React", "Python", "API REST"]
+    "tech": ["React", "Python", "Flask", "SQLAlchemy"],
+    "status": "in-progress"
   },
   {
     "name": "Juego en tiempo real",
@@ -35,12 +36,12 @@
     "status": "draft"
   },
   {
-    "name": "Experimento de interfaz",
-    "description": "Pequeño experimento centrado en interacción y construcción de UI en frontend.",
+    "name": "Extractor Engine",
+    "description": "Motor backend modular para extracción de datos con control de concurrencia, arquitectura desacoplada y estrategia adaptativa de scraping.",
     "image": "/images/placeholder.jpg",
-    "github": null,
+    "github": "https://github.com/tu-repo",
     "demo": null,
-    "tech": ["JavaScript", "CSS"],
-    "status": "draft"
+    "tech": ["Node.js", "MongoDB", "Docker", "Playwright"],
+    "status": "in-progress"
   }
 ]

@@ -1,16 +1,57 @@
-# React + Vite
+# Portfolio · Miguel García
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfolio personal en desarrollo, enfocado en frontend, UI y exploración técnica.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Sobre este proyecto
 
-## React Compiler
+Este repositorio recoge mi portfolio como desarrollador web.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Después de una etapa centrada en UI/UX y frontend, actualmente estoy retomando ritmo en el desarrollo y reforzando mi base técnica, explorando tanto frontend como backend a través de proyectos propios.
 
-## Expanding the ESLint configuration
+El objetivo de este portfolio es reflejar ese proceso de forma progresiva, mostrando proyectos, experimentos y aprendizaje continuo.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Contenido
+
+El portfolio se estructura en dos bloques principales:
+
+* **Projects** → proyectos seleccionados con intención de portfolio
+* **Experiments** → pruebas, ideas y exploraciones más abiertas (en desarrollo)
+
+---
+
+## Stack
+
+* React (Vite)
+* CSS (custom, sin frameworks)
+* Framer Motion (animaciones)
+* React Icons
+
+---
+
+## Estado
+
+Este portfolio está actualmente en desarrollo.
+
+* Estructura y base visual ya definidas
+* Contenido en proceso de curación
+* Proyectos en distintas fases (draft / in progress)
+
+---
+
+## Roadmap
+
+* [ ] Definir y pulir proyectos principales
+* [ ] Añadir sección de experiments
+* [ ] Mejorar contenido visual (imágenes / demos)
+* [ ] Versión en inglés
+* [ ] Deploy público
+
+---
+
+## Notas
+
+Este proyecto no pretende ser un escaparate cerrado, sino una representación honesta del proceso de aprendizaje, exploración y construcción como desarrollador.
