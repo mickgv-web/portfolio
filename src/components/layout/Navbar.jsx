@@ -4,7 +4,9 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="nav-content">
-        <h2 className="logo">MG</h2>
+        <h2 className="logo">
+          MG<span>.dev</span>
+        </h2>
 
         <div className="nav-links">
           <Link to="/">Home</Link>

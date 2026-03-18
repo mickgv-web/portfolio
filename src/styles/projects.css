@@ -21,6 +21,7 @@
   gap: 10px;
 
   transition: all 0.2s ease;
+  backdrop-filter: blur(6px);
 }
 
 .project-card:hover {
@@ -29,21 +30,51 @@
 }
 
 /* IMAGE */
+.project-image-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+
+  border-radius: 8px;
+  overflow: hidden;
+
+  background: #1a1a1d; /* fallback mientras carga */
+}
 
 .project-image {
   width: 100%;
-  border-radius: 8px;
+  height: 100%;
+
+  object-fit: cover;
 }
 
 /* TEXT */
 
 .project-card h3 {
-  margin: 4px 0;
+  margin: 6px 0;
+
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .project-card p {
   font-size: 14px;
   color: var(--text-secondary);
+
+  line-height: 1.6;
+
+  margin-bottom: 8px;
+}
+
+.project-image-wrapper {
+  margin-bottom: 12px;
+}
+
+.project-image {
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.03);
 }
 
 /* TECH TAGS */
@@ -52,6 +83,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
+  margin-top: 6px;
 }
 
 .project-tech span {
@@ -71,12 +103,10 @@
 /* LINKS */
 
 .project-links {
-  margin-top: auto;
-
   display: flex;
-  gap: 12px;
-
-  font-size: 18px;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
 }
 
 .project-links a {
@@ -90,4 +120,30 @@
 
 .project-links a:hover {
   color: var(--text-primary);
+}
+
+.repo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  font-size: 13px;
+
+  color: var(--text-secondary);
+
+  border: 1px solid var(--border-subtle);
+  padding: 4px 8px;
+  border-radius: 6px;
+
+  transition: all 0.2s ease;
+}
+
+.repo-link:hover {
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+}
+
+.repo-link span {
+  font-family: var(--font-mono);
+  font-size: 11px;
 }

@@ -10,11 +10,13 @@ function ProjectCard({ project }) {
       transition={{ duration: 0.2 }}
     >
       {/* IMAGE */}
-      <img
-        src={project.image || "/images/placeholder.jpg"}
-        alt={project.name}
-        className="project-image"
-      />
+      <div className="project-image-wrapper">
+        <img
+          src={project.image || "/images/placeholder.jpg"}
+          alt={project.name}
+          className="project-image"
+        />
+      </div>
 
       {/* TITLE */}
       <h3>{project.name}</h3>
@@ -31,7 +33,6 @@ function ProjectCard({ project }) {
 
       {/* LINKS */}
       <div className="project-links">
-        {/* GITHUB */}
         {project.github &&
           (Array.isArray(project.github) ? (
             project.github.map((repo) => (
@@ -40,9 +41,10 @@ function ProjectCard({ project }) {
                 href={repo.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                title={repo.label}
+                className="repo-link"
               >
                 <FaGithub />
+                <span>{repo.label}</span>
               </a>
             ))
           ) : (
@@ -50,17 +52,19 @@ function ProjectCard({ project }) {
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
+              className="repo-link"
             >
               <FaGithub />
+              <span>GitHub</span>
             </a>
           ))}
 
-        {/* DEMO */}
         {project.demo && (
           <a
             href={project.demo}
             target="_blank"
             rel="noopener noreferrer"
+            className="repo-link"
           >
             <FiExternalLink />
           </a>

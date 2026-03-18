@@ -47,6 +47,13 @@
   letter-spacing: 0.05em;
 }
 
+.logo span {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: normal;
+  font-family: var(--font-mono);
+}
+
 /* FOOTER */
 
 .footer {
