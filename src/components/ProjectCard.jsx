@@ -12,10 +12,20 @@ function ProjectCard({ project }) {
       {/* IMAGE */}
       <div className="project-image-wrapper">
         <img
-          src={project.image || "/images/placeholder.jpg"}
-          alt={project.name}
-          className="project-image"
+          src={project.image}
+          className="project-image base"
+          alt=""
         />
+
+        {project.overlay && (
+          <div className="overlay-mask">
+            <img
+              src={project.overlay}
+              className="overlay-image"
+              alt=""
+            />
+          </div>
+        )}
       </div>
 
       {/* TITLE */}

@@ -30,21 +30,66 @@
 }
 
 /* IMAGE */
+/* Contenedor principal */
 .project-image-wrapper {
-  width: 100%;
+  position: relative;
   aspect-ratio: 16 / 10;
-
   border-radius: 8px;
   overflow: hidden;
-
-  background: #1a1a1d; /* fallback mientras carga */
+  background: #17171a;
 }
 
-.project-image {
+/* Imagen base siempre al fondo */
+.project-image.base {
   width: 100%;
   height: 100%;
-
   object-fit: cover;
+  display: block;
+}
+
+/* La máscara que contiene la segunda imagen */
+.overlay-mask {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  
+  clip-path: polygon(95% 0, 100% 0, 100% 100%, 85% 100%);
+  
+  transition: clip-path 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ESTADO HOVER: Se expande hacia la izquierda */
+.project-card:hover .overlay-mask {
+  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.overlay-mask::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    75deg,
+    transparent 48%,
+    rgba(255,255,255,0.25) 50%,
+    transparent 52%
+  );
+
+  pointer-events: none;
+}
+
+.overlay-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (hover: none) {
+  /* En móviles, podemos dejar la máscara fija al 50% 
+     o que se active al hacer "tap" (clic) */
+  .overlay-mask {
+    clip-path: polygon(60% 0, 100% 0, 100% 100%, 50% 100%);
+  }
 }
 
 /* TEXT */
