@@ -24,7 +24,7 @@ function ProjectCard({ project }) {
         <img
           src={project.image}
           className="project-image base"
-          alt=""
+          alt={project.name}
         />
 
         {project.overlay && (
@@ -32,7 +32,7 @@ function ProjectCard({ project }) {
             <img
               src={project.overlay}
               className="overlay-image"
-              alt=""
+              alt={project.name}
             />
           </div>
         )}

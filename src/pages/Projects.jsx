@@ -13,20 +13,20 @@ const container = {
 
 function Projects() {
   return (
-    <section>
+    <div>
       <h2>Projects</h2>
-
       <Motion.div
         className="projects-grid"
         variants={container}
         initial="hidden"
-        animate="show"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
       >
         {projects.map((project) => (
           <ProjectCard key={project.name} project={project} />
         ))}
       </Motion.div>
-    </section>
+    </div>
   );
 }
 

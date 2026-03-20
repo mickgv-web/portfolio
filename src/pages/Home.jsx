@@ -23,9 +23,9 @@ function Home() {
         </p>
 
         <div className="hero-actions">
-          <Link to="/projects" className="btn-primary">
+          <a href="#projects" className="btn-primary">
             Ver proyectos
-          </Link>
+          </a>
 
           <a
             href="https://github.com/mickgv-web"

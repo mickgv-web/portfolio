@@ -1,106 +1,139 @@
+/* WRAPPER PRINCIPAL */
 .hero-wrapper {
-  height: 100%;
+  /* Ocupa toda la pantalla menos el navbar (aprox 70px) */
+  min-height: calc(100vh - 70px); 
   display: flex;
   align-items: center;
+  position: relative;
+  overflow: hidden; /* Mantiene el aura del gradiente bajo control */
 }
 
 .hero {
   position: relative;
-  padding: 120px 0 100px 0;
-  max-width: 700px;
+  /* Reducimos el padding fijo ya que el centrado lo hace el wrapper */
+  padding: 60px 0;
+  max-width: 800px;
+  z-index: 1;
 }
 
+/* EL AURA (Glow Effect) */
 .hero::before {
   content: "";
   position: absolute;
-  width: 500px;
-  height: 500px;
+  width: 600px;
+  height: 600px;
   background: radial-gradient(
     circle,
-    rgba(108,99,255,0.25),
+    rgba(108, 99, 255, 0.15), /* Bajamos un poco la opacidad para que sea elegante */
     transparent 70%
   );
-  filter: blur(100px);
-  top: -150px;
-  left: -150px;
+  filter: blur(80px);
+  top: -200px;
+  left: -250px;
   z-index: -1;
+  pointer-events: none;
 }
 
-/* HERO TEXT */
-
+/* TIPOGRAFÍA */
 .hero h1 {
-  font-size: 56px;
-  font-weight: 700;
-  margin-bottom: 10px;
+  font-size: clamp(40px, 8vw, 64px); /* Se adapta al tamaño de pantalla */
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 16px;
+  color: var(--text-primary);
 }
 
 .hero-subtitle {
-  font-size: 22px;
+  font-size: clamp(18px, 3vw, 24px);
+  font-weight: 500;
   color: var(--text-secondary);
-  margin-bottom: 18px;
+  margin-bottom: 20px;
+  max-width: 600px;
 }
 
 .hero-description {
-  max-width: 520px;
-  font-size: 16px;
+  max-width: 540px;
+  font-size: 17px;
   color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: 32px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+  opacity: 0.9;
 }
 
-/* ACTIONS */
-
+/* ACCIONES / BOTONES */
 .hero-actions {
   display: flex;
-  gap: 12px;
+  gap: 16px;
   flex-wrap: wrap;
+  align-items: center;
 }
 
-/* PRIMARY BUTTON */
-
+/* BOTÓN PRIMARIO (Ver Proyectos) */
 .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: var(--accent);
-  color: white;
-
-  padding: 10px 16px;
-
-  border-radius: 6px;
-
-  text-decoration: none;
-
-  border: none;
-
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 14px rgba(108, 99, 255, 0.3);
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(108, 99, 255, 0.45);
+  filter: brightness(1.1);
 }
 
-/* SECONDARY BUTTON */
+.btn-primary:active {
+  transform: translateY(-1px);
+}
 
+/* BOTÓN SECUNDARIO (Socials) */
 .btn-secondary {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
-
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--border-strong);
-
-  padding: 10px 14px;
-
-  border-radius: 6px;
-
-  text-decoration: none;
-
+  padding: 12px 20px;
+  border-radius: 8px;
   color: var(--text-secondary);
-
-  background: transparent;
-
+  font-size: 15px;
+  font-weight: 500;
   transition: all 0.2s ease;
 }
 
 .btn-secondary:hover {
-  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--text-secondary);
   color: var(--text-primary);
+  transform: translateY(-2px);
+}
+
+.btn-secondary svg {
+  font-size: 18px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero {
+    text-align: left;
+    padding: 40px 0;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .btn-primary, .btn-secondary {
+    width: 100%; /* Botones de ancho completo en móvil para mejor UX */
+    justify-content: center;
+  }
 }
