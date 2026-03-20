@@ -26,7 +26,6 @@
 
 .project-card:hover {
   border-color: var(--border-strong);
-  transform: translateY(-4px);
 }
 
 /* IMAGE */
@@ -56,6 +55,7 @@
   clip-path: polygon(95% 0, 100% 0, 100% 100%, 85% 100%);
   
   transition: clip-path 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  filter: drop-shadow(-5px 0 10px rgba(0,0,0,0.3));
 }
 
 /* ESTADO HOVER: Se expande hacia la izquierda */
@@ -66,15 +66,11 @@
 .overlay-mask::before {
   content: "";
   position: absolute;
-  inset: 0;
-
-  background: linear-gradient(
-    75deg,
-    transparent 48%,
-    rgba(255,255,255,0.25) 50%,
-    transparent 52%
-  );
-
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.4), transparent);
   pointer-events: none;
 }
 

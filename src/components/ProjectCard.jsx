@@ -2,10 +2,20 @@ import { motion as Motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 20 },
+  show: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.4, ease: "easeOut" }
+  }
+};
+
 function ProjectCard({ project }) {
   return (
     <Motion.div
       className="project-card"
+      variants={cardVariants}
       whileHover={{ y: -6 }}
       transition={{ duration: 0.2 }}
     >

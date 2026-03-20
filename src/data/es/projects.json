@@ -21,7 +21,8 @@
   {
     "name": "Juego en tiempo real",
     "description": "Exploración de comunicación en tiempo real entre cliente y servidor utilizando WebSockets.",
-    "image": "/images/placeholder.jpg",
+    "image": "/images/placeholder2.jpg",
+    "overlay": null,
     "github": "https://github.com/mickgv-web/spring-battleship",
     "demo": null,
     "tech": ["Java", "Spring Boot", "WebSockets"],
@@ -41,6 +42,7 @@
     "name": "Extractor Engine",
     "description": "Motor backend modular para extracción de datos con control de concurrencia, arquitectura desacoplada y estrategia adaptativa de scraping.",
     "image": "/images/placeholder.jpg",
+    "overlay": null,
     "github": "https://github.com/tu-repo",
     "demo": null,
     "tech": ["Node.js", "MongoDB", "Docker", "Playwright"],
