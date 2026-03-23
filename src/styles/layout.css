@@ -165,6 +165,14 @@ section {
   border-radius: 2px;
 }
 
+html {
+  scroll-snap-type: y proximity;
+}
+
+section {
+  scroll-snap-align: start;
+}
+
 /* MOBILE ADJUSTMENTS */
 @media (max-width: 640px) {
   section {
