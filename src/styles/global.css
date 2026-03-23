@@ -26,6 +26,17 @@
 
   --radius: 14px;
 
+  --brand-primary: #5851db; 
+  --brand-primary-glow: rgba(88, 81, 219, 0.15);
+
+  /* COLORS LEVEL 2: El Accent "Spark" (Alta energía, uso mínimo) */
+  /* Un cian neón o un verde lima eléctrico. El cian corta muy bien el violeta. */
+  --accent-spark: #00f5ff; 
+  
+  /* Textos con intención */
+  --text-primary: #f5f5f7;   /* Un blanco más "Apple" */
+  --text-secondary: #9494a0; /* Más contraste para la jerarquía */
+
 }
 
 * {
@@ -36,18 +47,18 @@ body {
   margin: 0;
   font-family: var(--font-sans);
   background-color: var(--bg-primary);
-  
-  /* Capa 1: El degradado de profundidad (Luz sutil) */
-  /* Usamos un tono ligeramente más claro que el bg-primary para el centro */
+
   background-image: 
-    radial-gradient(circle at 50% -20%, #1e1e22 0%, var(--bg-primary) 80%),
-    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-    
+    radial-gradient(circle at 50% -20%, #1e1e22 0%, transparent 80%),
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+
   background-size: 100% 100%, 40px 40px, 40px 40px;
+  
   background-attachment: fixed;
   color: var(--text-primary);
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
 }
 
 body::after {
