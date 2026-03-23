@@ -19,13 +19,23 @@
     "status": "in-progress"
   },
   {
-    "name": "Juego en tiempo real",
+    "name": "Juego en tiempo real - Battleship",
     "description": "Exploración de comunicación en tiempo real entre cliente y servidor utilizando WebSockets.",
-    "image": "/images/placeholder2.jpg",
-    "overlay": null,
+    "image": "/images/battleship.jpg",
+    "overlay": "/images/battleship-overlay.jpg",
     "github": "https://github.com/mickgv-web/spring-battleship",
     "demo": null,
     "tech": ["Java", "Spring Boot", "WebSockets"],
+    "status": "in-progress"
+  },
+  {
+    "name": "Extractor Engine",
+    "description": "Motor backend modular para extracción de datos con control de concurrencia, arquitectura desacoplada y estrategia adaptativa de scraping.",
+    "image": "/images/extractor-engine.jpg",
+    "overlay": null,
+    "github": "https://github.com/mickgv-web/appmongo",
+    "demo": null,
+    "tech": ["Node.js", "MongoDB", "Docker", "Playwright"],
     "status": "in-progress"
   },
   {
@@ -37,15 +47,5 @@
     "demo": null,
     "tech": ["PHP", "MVC"],
     "status": "draft"
-  },
-  {
-    "name": "Extractor Engine",
-    "description": "Motor backend modular para extracción de datos con control de concurrencia, arquitectura desacoplada y estrategia adaptativa de scraping.",
-    "image": "/images/placeholder.jpg",
-    "overlay": null,
-    "github": "https://github.com/tu-repo",
-    "demo": null,
-    "tech": ["Node.js", "MongoDB", "Docker", "Playwright"],
-    "status": "in-progress"
   }
 ]

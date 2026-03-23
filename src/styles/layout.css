@@ -11,7 +11,15 @@
   width: 100%;
   max-width: 1100px;
   margin: 0 auto; /* Centrado horizontal */
-  padding: 0 24px; /* Padding lateral para que no toque los bordes en móvil */
+  padding: 0; /* Padding lateral para que no toque los bordes en móvil */
+}
+
+/* Creamos una clase de utilidad para el ancho contenido */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
 }
 
 /* SECCIONES (El motor de la One-Page) */
@@ -80,6 +88,7 @@ section {
 .nav-links a {
   position: relative;
   padding: 4px 0;
+  color: var(--text-primary);
 }
 
 .nav-links a.active {
@@ -143,11 +152,6 @@ section {
   color: var(--text-secondary);
   margin-left: 16px;
   transition: color 0.2s ease;
-}
-
-.nav-links a.active {
-  color: var(--accent);
-  font-weight: 600;
 }
 
 /* Una pequeña línea debajo opcional para el estado activo */

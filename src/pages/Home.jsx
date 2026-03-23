@@ -1,12 +1,11 @@
 import { motion as Motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 function Home() {
   return (
-    <div className="hero-wrapper">
-      <Motion.section
-        className="hero"
+    <section className="hero-wrapper">
+      <Motion.div
+        className="hero-content"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -14,7 +13,7 @@ function Home() {
         <h1>Miguel García</h1>
 
         <h2 className="hero-subtitle">
-          Desarrollador web con background en UI y frontend
+          Desarrollador web con background en <span className="text-highlight">UI y frontend</span>
         </h2>
 
         <p className="hero-description">
@@ -47,8 +46,8 @@ function Home() {
             LinkedIn
           </a>
         </div>
-      </Motion.section>
-    </div>
+      </Motion.div>
+    </section>
   );
 }
 

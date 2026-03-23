@@ -1,42 +1,51 @@
-/* WRAPPER PRINCIPAL */
+/* WRAPPER PRINCIPAL (Ocupa todo el ancho) */
 .hero-wrapper {
-  /* Ocupa toda la pantalla menos el navbar (aprox 70px) */
-  min-height: calc(100vh - 70px); 
+  min-height: calc(100vh - 70px);
   display: flex;
   align-items: center;
   position: relative;
-  overflow: hidden; /* Mantiene el aura del gradiente bajo control */
+  overflow: hidden; /* Evita que el aura cree scroll horizontal */
 }
 
+/* CONTENEDOR DE CONTENIDO (Centrado y alineado con Projects) */
+.hero-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* LA CAJA DE TEXTO (Limitamos el ancho para que el texto sea legible) */
 .hero {
   position: relative;
-  /* Reducimos el padding fijo ya que el centrado lo hace el wrapper */
-  padding: 60px 0;
-  max-width: 800px;
-  z-index: 1;
+  padding: 80px 0;
+  max-width: 800px; /* Evita líneas de texto demasiado largas */
 }
 
 /* EL AURA (Glow Effect) */
-.hero::before {
+/* Lo movemos a hero-content o hero-wrapper para que no dependa del texto */
+.hero-wrapper::before {
   content: "";
   position: absolute;
   width: 600px;
   height: 600px;
   background: radial-gradient(
     circle,
-    rgba(108, 99, 255, 0.15), /* Bajamos un poco la opacidad para que sea elegante */
+    rgba(108, 99, 255, 0.15),
     transparent 70%
   );
   filter: blur(80px);
-  top: -200px;
-  left: -250px;
-  z-index: -1;
+  top: -100px; /* Ajustado para que se vea mejor tras el título */
+  left: -150px;
+  z-index: 1;
   pointer-events: none;
 }
 
 /* TIPOGRAFÍA */
 .hero h1 {
-  font-size: clamp(40px, 8vw, 64px); /* Se adapta al tamaño de pantalla */
+  font-size: clamp(40px, 8vw, 64px);
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1.1;
@@ -48,8 +57,46 @@
   font-size: clamp(18px, 3vw, 24px);
   font-weight: 500;
   color: var(--text-secondary);
-  margin-bottom: 20px;
-  max-width: 600px;
+  margin-bottom: 24px;
+}
+
+/* home.css */
+
+/* Estilo base para el span */
+.text-highlight {
+  position: relative;
+  display: inline-block; /* Necesario para que el subrayado se alinee bien */
+  color: var(--text-primary); /* Resaltamos ligeramente el texto */
+  font-weight: 600; /* Un poco más de peso visual */
+}
+
+/* El subrayado (pseudoelemento) */
+.text-highlight::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px; /* Ajusta la distancia al texto */
+  height: 2px; /* Grosor de la línea */
+  
+  /* Degradado sutil: empieza en tu violeta y se desvanece */
+  background: linear-gradient(90deg, var(--accent) 0%, rgba(108, 99, 255, 0.2) 100%);
+  border-radius: 2px;
+  
+  /* Estado inicial: ancho 0 (oculto) */
+  width: 0%;
+  
+  /* Configuración de la animación */
+  animation: drawUnderline 1s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  
+  /* Pequeño retraso para que no empiece a la vez que el texto (opcional) */
+  animation-delay: 0.8s; 
+}
+
+/* Definición de la animación */
+@keyframes drawUnderline {
+  to {
+    width: 100%;
+  }
 }
 
 .hero-description {
@@ -58,7 +105,6 @@
   color: var(--text-secondary);
   line-height: 1.7;
   margin-bottom: 40px;
-  opacity: 0.9;
 }
 
 /* ACCIONES / BOTONES */
@@ -69,18 +115,22 @@
   align-items: center;
 }
 
-/* BOTÓN PRIMARIO (Ver Proyectos) */
-.btn-primary {
+/* BOTONES */
+.btn-primary, .btn-secondary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--accent);
-  color: #ffffff;
   padding: 12px 24px;
   border-radius: 8px;
-  font-weight: 600;
   font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #ffffff;
   box-shadow: 0 4px 14px rgba(108, 99, 255, 0.3);
 }
 
@@ -90,23 +140,11 @@
   filter: brightness(1.1);
 }
 
-.btn-primary:active {
-  transform: translateY(-1px);
-}
-
-/* BOTÓN SECUNDARIO (Socials) */
 .btn-secondary {
-  display: inline-flex;
-  align-items: center;
   gap: 8px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--border-strong);
-  padding: 12px 20px;
-  border-radius: 8px;
   color: var(--text-secondary);
-  font-size: 15px;
-  font-weight: 500;
-  transition: all 0.2s ease;
 }
 
 .btn-secondary:hover {
@@ -116,24 +154,23 @@
   transform: translateY(-2px);
 }
 
-.btn-secondary svg {
-  font-size: 18px;
-}
-
 /* RESPONSIVE */
 @media (max-width: 768px) {
-  .hero {
-    text-align: left;
-    padding: 40px 0;
+  .hero-wrapper {
+    min-height: auto;
+    padding: 100px 0 60px 0;
   }
   
+  .hero {
+    padding: 0;
+  }
+
   .hero-actions {
     flex-direction: column;
-    align-items: flex-start;
+    width: 100%;
   }
-  
+
   .btn-primary, .btn-secondary {
-    width: 100%; /* Botones de ancho completo en móvil para mejor UX */
-    justify-content: center;
+    width: 100%;
   }
 }

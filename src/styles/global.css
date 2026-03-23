@@ -34,36 +34,36 @@
 
 body {
   margin: 0;
-
-  font-family: "Inter", system-ui, -apple-system, sans-serif;
-
+  font-family: var(--font-sans);
   background-color: var(--bg-primary);
-
-  background-image:
-    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-
-  background-size: 40px 40px;
-
+  
+  /* Capa 1: El degradado de profundidad (Luz sutil) */
+  /* Usamos un tono ligeramente más claro que el bg-primary para el centro */
+  background-image: 
+    radial-gradient(circle at 50% -20%, #1e1e22 0%, var(--bg-primary) 80%),
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    
+  background-size: 100% 100%, 40px 40px, 40px 40px;
+  background-attachment: fixed;
   color: var(--text-primary);
-
-  line-height: 1.5;
-
-  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
 }
 
 body::after {
   content: "";
-
   position: fixed;
   inset: 0;
-
   pointer-events: none;
-
-  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
-  opacity: 0.04;
-
   z-index: 999;
+  
+  /* Ruido SVG con puntos más finos (baseFrequency 0.8) */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  
+  /* Modo de mezcla para que el grano "muerda" los colores del fondo */
+  mix-blend-mode: overlay;
+  opacity: 0.07; /* Un pelín más visible ahora que mezcla */
+  background-size: 250px;
 }
 
 h1, h2, h3 {
